@@ -10,10 +10,10 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  schedule: 
+  schedule:
     # nightly
     - cron: '0 0 * * *'
-    
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -25,7 +25,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -47,7 +47,7 @@ jobs:
       env:
           TAG_NAME: test-report-${{ steps.date.outputs.date }}
       if: always()
-      with: 
+      with:
         name: onDemand
         path: pw-report/
 
