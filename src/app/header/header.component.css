@@ -1,8 +1,20 @@
-h1 {
+.header {
   width: 100%;
-  padding: 16px;
   background: lightgray;
+  display: flex;
+}
+div.header_items{
+  display: flex;
+  flex-direction: column-reverse;
+  margin-left: 20px;
+}
+#contact{
+  margin-left: auto;
+  margin-right: 5px;
+}
+#logo{
+  margin: 3px;
   font-family: Lato, serif;
-  text-align: center;
+  text-align: left;
 }
 
