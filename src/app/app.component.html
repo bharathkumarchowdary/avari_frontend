@@ -1,6 +1,24 @@
 <app-header name='Avari'></app-header>
 <div>
+  <button (click)='isOpen = !isOpen' type='button' cdkOverlayOrigin #trigger='cdkOverlayOrigin'>
+    {{isOpen ? "Close" : "Open"}}
+  </button>
   <p>We procure all electronics items from resister/capacitors to Single Board Computers.
     Please feel free to post your requirement/query via this email id</p>
-  <a mat-raised-button href='mailto: bharath@otsiot.com' color='primary' target='_blank'>Contact Us</a>
 </div>
+
+<div id='flyer'>
+  <img src='' alt='' ngSrc='assets/electronics-banner-02.jpg' width='400' height='200' priority>
+</div>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]='trigger'
+  [cdkConnectedOverlayOpen]='isOpen'
+>
+  <ul class='example-list'>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+</ng-template>
