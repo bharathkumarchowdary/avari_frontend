@@ -1,6 +1,6 @@
 <a (mouseenter)='productListIsOpen=true' cdkOverlayOrigin #trigger='cdkOverlayOrigin'>Products</a>
 
-<ng-template cdkConnectedOverlay
+<ng-template cdkConnectedOverlay (overlayOutsideClick)='productListIsOpen=false'
              [cdkConnectedOverlayOrigin]='trigger' [cdkConnectedOverlayOpen]='productListIsOpen'>
   <ul (mouseleave)='productListIsOpen=false' (mouseenter)='productListIsOpen=true' class='example-list'>
     <li>Item 1</li>
